@@ -21,7 +21,7 @@ Quantify frequency and strength of GNSS jamming across the globe.
 Here I will write about installing this. link is the # name
 Testing new text 
 
-Note: 
+Assumptions: 
 - will kill zeros
 - note precentages for the graphs are only of the bins given .
 - note map saving
@@ -32,3 +32,4 @@ Note:
  
 To work on: 
 - r2 and getting from the website itself
+- need to re-add and clean up cusotm polygons 
