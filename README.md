@@ -28,4 +28,7 @@ Note:
 - note can work for any OS
 - Things that can be changed manually:
 -   - note grid is preset but can be changed manually
--   - saving data frame with final data 
+-   - saving data frame with final data
+ 
+To work on: 
+- r2 and getting from the website itself
