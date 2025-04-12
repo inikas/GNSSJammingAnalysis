@@ -1,5 +1,5 @@
 # GNSSJamming
-Quantify frequency and strength of GNSS jamming across the globe.
+Quantify frequency and strength of GNSS jamming affecting commercial aircraft across the globe.
 
 ## Table of Contents
 - [Introduction to GNSS Jamming](#introduction-to-gnss-jamming)
@@ -10,7 +10,7 @@ Quantify frequency and strength of GNSS jamming across the globe.
 - [License](#license)
 
 ## Introduction to GNSS Jamming
-- risks
+GPS Jamming is increasingly affecting 
 - NIC data
 - 
 - Process for this project and why useful
