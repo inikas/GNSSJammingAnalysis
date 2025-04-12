@@ -35,4 +35,5 @@ To work on:
 - need to re-add and clean up cusotm polygons
 
 - 
-<pre> ```python def hello(): print("Hello, GitHub!") ``` </pre>
+```bash
+   git clone https://github.com/yourusername/project-name.git
