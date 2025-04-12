@@ -10,7 +10,10 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 - [License](#license)
 
 ## Introduction to GNSS Jamming
-GPS Jamming is increasingly affecting 
+Global Navigation Satellites Systems (GNSS), which the Global Positions System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, history was made on March 3, 2025 when for the first time a Lunar asset acquired GPS signals ().
+
+cisely locate. In recent years, the usage of the signals form these systems that aid terrestrial (a
+
 - NIC data
 - 
 - Process for this project and why useful
@@ -32,8 +35,11 @@ Testing new text
 
 ## GUI Interaction 
 _Downloading ADS-B Data_: 
-Assumptions: 
+
+ss
+- zeros are killed
 - what we start with, what we get
+- - note delay may ocure if downloading to cloud folder
 
 
 _Processing ADS-B Data_:
