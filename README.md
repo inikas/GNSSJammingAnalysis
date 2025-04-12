@@ -10,7 +10,7 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 - [License](#license)
 
 ## Introduction to GNSS Jamming
-Global Navigation Satellites Systems (GNSS), which the Global Positions System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, history was made on March 3, 2025 when for the first time a Lunar asset acquired GPS signals ().
+Global Navigation Satellites Systems (GNSS), which the American Global Positioning System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, however, history was made on March 3, 2025 "when the Lunar GNSS Receiver Experiment (LuGRE) became the first technology demonstration to acquire and track Earth-based navigation signals on the Moon’s surface" [NASA and Italian Space Agency - LuGRE](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/nasa-successfully-acquires-gps-signals-on-moon/#:~:text=NASA%20and%20the%20Italian%20Space,signals%20on%20the%20Moon's%20surface.)
 
 cisely locate. In recent years, the usage of the signals form these systems that aid terrestrial (a
 
