@@ -10,7 +10,14 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 - [License](#license)
 
 ## Introduction to GNSS Jamming
-Global Navigation Satellites Systems (GNSS), which the American Global Positioning System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, however, history was made on March 3, 2025 "when the Lunar GNSS Receiver Experiment (LuGRE) became the first technology demonstration to acquire and track Earth-based navigation signals on the Moon’s surface" [NASA and Italian Space Agency - LuGRE](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/nasa-successfully-acquires-gps-signals-on-moon/#:~:text=NASA%20and%20the%20Italian%20Space,signals%20on%20the%20Moon's%20surface.)
+Global Navigation Satellites Systems (GNSS), which the American Global Positioning System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, however, history was made on March 3, 2025 "when the [Lunar GNSS Receiver Experiment (LuGRE)](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/nasa-successfully-acquires-gps-signals-on-moon/#:~:text=NASA%20and%20the%20Italian%20Space,signals%20on%20the%20Moon's%20surface.) became the first technology demonstration to acquire and track Earth-based navigation signals on the Moon’s surface." GNSS signals are [used](https://www.gps.gov/applications/) by devices ranging from cell phones to shipping containers. Diruption of these capacilities to such assets could lead to significant inconvenience and economic loss. Disruption of GNSS signals to systems like commercial aircraft, however, [could aversly affect thier safety systems](https://www.csis.org/events/what-are-impacts-gps-jamming-and-spoofing-civilians), making routine flying more dangerous. 
+
+As GNSS systems are space systems, attacks that disrupt or corrupt GNSS signals can be considered counterspace capabilities. Jamming, "an electronic attack that uses radio frequency signals to interfere with communications,"]()
+
+
+Interactive maps like [gpsjam.org](https://gpsjam.org/) can be used to view the extent of 
+The Center for Strategic and International Studies's Aerospace Secur
+
 
 cisely locate. In recent years, the usage of the signals form these systems that aid terrestrial (a
 
