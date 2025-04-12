@@ -9,7 +9,6 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 - [GUI Interaction](#gui-interaction)
 - [Outputs](#outputs)
 - [Next Steps](#next-steps)
-- [License](#license)
 
 
 ## Introduction to GNSS Jamming
@@ -38,7 +37,7 @@ Downloading the repository, you will see the following file structure:
 ```
 
 This repository is coded using Python. Make sure you have all necessary packages. The list of packages that you will need that are not included in the standard Python library are:
-
+```
 1. tkcalendar
 2. python-dateutil
 3. pandas
@@ -49,14 +48,15 @@ This repository is coded using Python. Make sure you have all necessary packages
 8. matplotlib
 9. folium
 10. mplcursors
+```
+You can either run the `pip3 install [package name]` command to individually install each package, or you can open and run `package_install_check.py` script that will automatically check and install missing packages. 
 
-After downloading Python, the additional packages you will need are: 
-Use the `pip install matplotlib` command to install the package.
-
+To use the tool, open and run `jamming_dashboard.py`. This will open the main GUI.
 
 ## GUI Interaction 
+The GUI is broken into two sections, as follows:
 
-_Downloading ADS-B Data_: 
+1. _Downloading ADS-B Data_
 
 ss
 - zeros are killed
@@ -64,7 +64,7 @@ ss
 - - note delay may ocure if downloading to cloud folder
 
 
-_Processing ADS-B Data_:
+2. _Processing ADS-B Data_
 - go through fields
 
 - 
@@ -90,5 +90,3 @@ Assumptions:
 To work on: 
 - r2 and getting from the website itself
 - need to re-add and clean up cusotm polygons
-
-## License
