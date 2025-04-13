@@ -5,7 +5,7 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 ## Table of Contents
 - [Introduction to GNSS Jamming](#introduction-to-gnss-jamming)
 - [Installation](#installation)
-- [Overview](#overview)
+- [Tool Overview](#toool-overview)
 - [GUI Interaction](#gui-interaction)
 - [Outputs](#outputs)
 - [Next Steps](#next-steps)
@@ -17,7 +17,7 @@ Global Navigation Satellites Systems (GNSS), which the American Global Positioni
 
 As GNSS systems are space systems, attacks that disrupt or corrupt GNSS signals can be considered counterspace capabilities. Jamming, ["an electronic attack that uses radio frequency signals to interfere with communications,"](https://aerospace.csis.org/aerospace101/counterspace-weapons-101/) is increasinlgy being used to target GNSS signals. Interactive maps like [gpsjam.org](https://gpsjam.org/) can be used to view the extent of such jamming. Aditionally, as coverage of commercial aircraft is widespread, observing jamming instances on commercial aircraft can give significant insight into GNSS jamming over an area, more generally.
 
-## Overview
+## Tool Overview
 While an intern with the [Aerospace Security Project at the Center for Strategic and International Studies](https://www.csis.org/programs/aerospace-security-project) in Washington, D.C., I explored such tools but I could not find an open source tool that quantified jamming over time. 
 
 This project is an attempt to allow the user to more clearly grasp the number and strength of jamming instances over time and over a particular area. To do this, I used publicly avaiable Automatic Dependent Surveillance–Broadcast (ADS-B) from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine whether or not jamming is occuring. The user can define buckets to group data in, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter gives information on the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not spoofing is ocurring. Table 1, below, shows the different NIC values (always integers) and the associated level of confidence in the reading, expressed by the Radius of Containment ($R_c$); the $R_c$ parameter describes the radius of a circle centerd at the aircraft's reported position in which the actual location of the aircraft has a $99.999$% of being within. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) publiidhed by the International Civil Aviation Organization (ICAO).
