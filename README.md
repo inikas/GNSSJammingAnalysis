@@ -39,12 +39,10 @@ Downloading the repository, you will see the following file structure:
 │   ├── process_ADS_B_data.py
 ├── 📁 maps
 │   ├── 📁 custom_polygons
-│   ├──  📁 ne_10m_admin_0_countries
+│   ├── 📁 ne_10m_admin_0_countries
 │   ├── (global map files ...)
 └── 📁 outputs
-
 ```
-
 This repository is coded using Python. Make sure you have all necessary packages. The list of packages that you will need that are not included in the standard Python library are:
 ```
 1. tkcalendar
@@ -60,24 +58,33 @@ This repository is coded using Python. Make sure you have all necessary packages
 ```
 You can either run the `pip3 install [package name]` command to individually install each package, or you can open and run `package_install_check.py` script that will automatically check and install missing packages. 
 
-To use the tool, open and run `jamming_dashboard.py`. This will open the main GUI.
+To use the tool, open and run `jamming_dashboard.py`. This will open the main Graphical User Interface (GUI).
 
 ## GUI Interaction 
-The GUI is broken into two sections, as follows:
+Open and run the `jamming_dashboard.py` file to launch the GUI. The GUI is broken into two sections, as follows:
 
 1. _Downloading ADS-B Data_
 
-ss
-- zeros are killed
-- what we start with, what we get
-- - note delay may ocure if downloading to cloud folder
+This section of the GUI is used to download the ADS-B data from the web. Currently, this is done by downloading data from the [ADS-B Exchange historical data](https://www.adsbexchange.com/products/historical-data/). This website publishes free, historical data for every first day of the month, found under the “readsb-hist” section. Data is oriignally stored in a JSON format. When it is downloaded, it is cleaned and stored into a [GeoDataFrame](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html). 
+
+
+To download data, you can either select a single start date, a start and end date that will cover every day between and including the start and end bounds, or a series of dates of your choosing. Aditionally, a sampling rate that prescribes how often to sample data from the repository in minutes is needed. When ready, click the _Download_ button, which will save the data into organized files within the _ADS_B_Data_ folder. When this is done, you will see a folder for each day that has a file for each time you have sampled - the file names will take the form of _000000Z.pkl_. The first two digits represent the hour, the middle two the minutes, and the last two the seconds. The "Z" represents Zulu time. A sample of what we start with and end with for Januaary 1, 2024 at 00:00:00Z is included below in Table 2:
+
+Table 2: The left shows sample data for a single flight at 00:00:00Z on January 1, 2024. Each time file on ADS-B Exchange has thousands of these entires corresponding to each flight airborne and sending out ADS-B signals at the time. The right shows how it is downloaded in the tool; note that each flight now takes a single row in the GeoDataFrame. 
+
+<img width="989" alt="image" src="https://github.com/user-attachments/assets/6c606936-f240-43cb-a3ba-4090a73718dc" />
+
+
+**Note**
+- When downloading, observations from that data that have $NIC = 0$ are thrown out. 
+- If you are downloading to a folder that is stored in the cloud, say a OneDrive folder, downloading may take some time as your system tries to simultenosuly sync ot the cloud. To avoid this, you can download to a local folder or turn off syncing to the cloud until your download is complete.
+- On data size: at a sampling rate of 30 min, a typically day may store between 10 -20 MB od data.
 
 
 2. _Processing ADS-B Data_
 - go through fields
 
-- 
-
+  
 
 
 Custom Regions:
