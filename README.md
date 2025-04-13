@@ -9,6 +9,7 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 - [GUI Interaction](#gui-interaction)
 - [Outputs](#outputs)
 - [Next Steps](#next-steps)
+- [Appendix](#appendix)
 
 
 ## Introduction to GNSS Jamming
@@ -74,27 +75,37 @@ Table 2: The left shows sample data for a single flight at 00:00:00Z on January 
 
 <img width="989" alt="image" src="https://github.com/user-attachments/assets/6c606936-f240-43cb-a3ba-4090a73718dc" />
 
-
 Note:
 - When downloading, observations from that data that have $NIC = 0$ are thrown out. 
 - If you are downloading to a folder that is stored in the cloud, say a OneDrive folder, downloading may take some time as your system tries to simultenosuly sync ot the cloud. To avoid this, you can download to a local folder or turn off syncing to the cloud until your download is complete.
-- On data size: at a sampling rate of 30 min, a typically day may store between 10 -20 MB od data.
+- On data size: at a sampling rate of 30 min, a typically day may store between $10-20$ MB of data.
 
 
 2. _Processing ADS-B Data_
 
-This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, follow this tutorial. After custom regions are created, they are automatically shown in the dropdown. 
+This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, refer to the Appendix below. After custom regions are created, they are automatically shown in the dropdown. 
 
-NIC bin edges also need to be defined by the user. These edges define the buckets that the program will group observations in. You can only input integers, floats, or the string 'inf,' all seperated by commas in this field. For example, if you are interested in looking at observations below the $NIC >=7 $ threshold and above, you can enter `0, 6, 'inf'`.
+NIC bin edges also need to be defined by the user. These edges define the buckets that the program will group observations in. You can only input integers, floats, or the string *'inf,'* all seperated by commas in this field. For example, if you are interested in looking at observations below the $NIC >= 7$ threshold and above, that correspond to jamming and no jamming, respectively, you can enter *0, 6, 'inf'*. Once you type the bin edges in the text field, make sure to click on the _Update NIC bin edges_ button. Upon clicking this button, you will see your changes notes in the _Current Selection_ field. Note that the lower bounds are exlusive and the upper bound inclusive. You will also see a color popup appear. By default, all bins will be assigned white, but specifying colors will make it easier to differentiate quantities later on in the outputted plots. 
 
-  
-
-
-Custom Regions:
+When all user inputs are complete, click the _Process Data_ button. It may take some time to process and display the outputs. 
 
 ## Outputs
-- graphs
-- maps saved
+This tool outputs a set of graphs and maps. Table 3 describes the graph outputs, and Table 4 the map outputs. 
+
+Table 3: The left set of plots organizes every single sample collected into the prescribed bins. The top left shows all samples organized into the bins, and the bottom left shows the percentage of each group with respect to the total contained in all the bins. The right set of plots shows the number of unique flights that fell into each bin. The top shows the number of flights and the bottom the percentage of flights in each bin, again with respect to the total number of unique flight numbers in the bins defined by the user. Note that if a flight expereinced a NIC value in more than one bin over time it will be included in both on the top, but it will not be double counted when calculating the percentage (i.e. the percentage value in the bottom graph is not necessarily the height of each bin on the top divided by the total height of the full graph). Also, note that the markup popups display data for the bin highlighted by the user's mouse. 
+
+<img width="997" alt="image" src="https://github.com/user-attachments/assets/596d189b-2dd6-430f-84e0-b454124c9f23" />
+
+Table 4: 
+
+The tool also creates a map of the data. The map on the left, saved to _map_raw.html_ in the `Outputs` folder is a map of every data point. The right shows the map saved in `map_averaged.html`, which averages the samples over cells and plots a single point at the center of the cells. The size of the cells can be manually changed within `process_ADS_B_data.py` inside the *get_NIC_data_boxed_averages()* function by changing the *lat_bin_size* and *long_bin_size* that define the cell dimensions. Note the filters on the left that allow you to show or hide data within a particualar bin. Click a point to get more information about it. 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f089d913-3a3a-425e-89d0-6ac0ec1425eb" width="50%" />
+  <img src="https://github.com/user-attachments/assets/62f9774f-364c-4971-999f-aa36e7780da1" width="50%" />
+</p>
+
+While the maps save to the output folder, one can have them automatically open by uncommenting the *webbrowser.open* lines within `porcess_ADS_B_data.py`.
 
 ## Next Steps
 Assumptions: 
@@ -109,3 +120,9 @@ Assumptions:
 To work on: 
 - r2 and getting from the website itself
 - need to re-add and clean up cusotm polygons
+
+## Appendix
+
+Creating Custom Regions:
+
+
