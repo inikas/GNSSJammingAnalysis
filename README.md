@@ -19,9 +19,9 @@ As GNSS systems are space systems, attacks that disrupt or corrupt GNSS signals 
 ## Overview
 While an intern with the [Aerospace Security Project at the Center for Strategic and International Studies](https://www.csis.org/programs/aerospace-security-project) in Washington, D.C., I explored such tools but I could not find an open source tool that quantified jamming over time. 
 
-This project is an attempt to allow the user to more clearly grasp the number and strength of jamming instances over time and over a particular area. To do this, I used publicly avaiable Automatic Dependent Surveillance–Broadcast (ADS-B) from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine whether or not jamming is occuring. The user can define buckets to group data in, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter gives information on the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not spoofing is ocurring. Table 1, below, shows the different NIC values (always integers) and the associated level of confidence in the reading, expressed by the Radius of Containment ($R_c$); the $R_c$ parameter describes the radius of a circle centerd at the aircraft's reported position in which the actual location of the aircraft has a $99.999$% of being within. 
+This project is an attempt to allow the user to more clearly grasp the number and strength of jamming instances over time and over a particular area. To do this, I used publicly avaiable Automatic Dependent Surveillance–Broadcast (ADS-B) from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine whether or not jamming is occuring. The user can define buckets to group data in, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter gives information on the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not spoofing is ocurring. Table 1, below, shows the different NIC values (always integers) and the associated level of confidence in the reading, expressed by the Radius of Containment ($R_c$); the $R_c$ parameter describes the radius of a circle centerd at the aircraft's reported position in which the actual location of the aircraft has a $99.999$% of being within. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) publiidhed by the International Civil Aviation Organization (ICAO).
 
-**Table 1:** NIC value and corresponding size of containment radius (Source: Zixi Liu, Sherman Lo, and Todd Walter, "GNSS Interference Source Localization Using ADS-B data," Stanford University, [https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf](https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf).)
+**Table 1:** NIC value and corresponding size of containment radius. Source: Zixi Liu, Sherman Lo, and Todd Walter, "GNSS Interference Source Localization Using ADS-B data," Stanford University, [https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf](https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf).
 
 <img width="261" alt="image" src="https://github.com/user-attachments/assets/de9dcf69-565b-4c07-95d1-af5e71523701" />
 
@@ -31,14 +31,18 @@ Downloading the repository, you will see the following file structure:
 ```
 📁 .
 ├── 📁 ADS_B_Data
+├── 📁 code
+│   ├── countries_list.pkl
+│   ├── get_ADS_B_data.py
+│   ├── jamming_dashboard.py
+│   ├── package_install_check.py
+│   ├── process_ADS_B_data.py
 ├── 📁 maps
-│   ├── 📁 
+│   ├── 📁 countries
+│   ├── 📁 custom_polygons
+│   ├── (global map files ...)
+└── 📁 outputs
 
-│   ├── 📁 Reference Files	
-│   ├── 📁 SNL Downloads
-│   ├── 📁 Daily Analysis
-│   └── 📁 Historical Analysis
-└── 📁 Code
 ```
 
 This repository is coded using Python. Make sure you have all necessary packages. The list of packages that you will need that are not included in the standard Python library are:
