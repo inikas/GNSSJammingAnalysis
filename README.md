@@ -44,7 +44,7 @@ Downloading the repository, you will see the following file structure:
 │   ├── (global map files ...)
 └── 📁 outputs
 ```
-This repository is coded using Python. Make sure you have all necessary packages. The list of packages that you will need that are not included in the standard Python library are:
+This repository is coded using Python, and works for both Mac and Windows operating systems. Make sure you have all necessary packages. The list of packages that you will need that are not included in the standard Python library are:
 ```
 1. tkcalendar
 2. python-dateutil
@@ -68,10 +68,9 @@ Open and run the `jamming_dashboard.py` file to launch the GUI. The GUI is broke
 
 This section of the GUI is used to download the ADS-B data from the web. Currently, this is done by downloading data from the [ADS-B Exchange historical data](https://www.adsbexchange.com/products/historical-data/). This website publishes free, historical data for every first day of the month, found under the “readsb-hist” section. Data is oriignally stored in a JSON format. When it is downloaded, it is cleaned and stored into a [GeoDataFrame](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html). 
 
-
 To download data, you can either select a single start date, a start and end date that will cover every day between and including the start and end bounds, or a series of dates of your choosing. Aditionally, a sampling rate that prescribes how often to sample data from the repository in minutes is needed. When ready, click the _Download_ button, which will save the data into organized files within the _ADS_B_Data_ folder. When this is done, you will see a folder for each day that has a file for each time you have sampled - the file names will take the form of _000000Z.pkl_. The first two digits represent the hour, the middle two the minutes, and the last two the seconds. The "Z" represents Zulu time. A sample of what we start with and end with for Januaary 1, 2024 at 00:00:00Z is included below in Table 2:
 
-Table 2: The left shows sample data for a single flight at 00:00:00Z on January 1, 2024. Each time file on ADS-B Exchange has thousands of these entires corresponding to each flight airborne and sending out ADS-B signals at the time. The right shows how it is downloaded in the tool; note that each flight now takes a single row in the GeoDataFrame. 
+**Table 2:** The left shows sample data for a single flight at 00:00:00Z on January 1, 2024. Each time file on ADS-B Exchange has thousands of these entires corresponding to each flight airborne and sending out ADS-B signals at the time. The right shows how it is downloaded in the tool; note that each flight now takes a single row in the GeoDataFrame. 
 
 <img width="989" alt="image" src="https://github.com/user-attachments/assets/6c606936-f240-43cb-a3ba-4090a73718dc" />
 
@@ -90,39 +89,27 @@ NIC bin edges also need to be defined by the user. These edges define the bucket
 When all user inputs are complete, click the _Process Data_ button. It may take some time to process and display the outputs. 
 
 ## Outputs
-This tool outputs a set of graphs and maps. Table 3 describes the graph outputs, and Table 4 the map outputs. 
+This tool outputs a set of graphs and maps. Table 3 describes the graph outputs, and Table 4 the map outputs for a test run over Poland on January 1, 2024. 
 
-Table 3: The left set of plots organizes every single sample collected into the prescribed bins. The top left shows all samples organized into the bins, and the bottom left shows the percentage of each group with respect to the total contained in all the bins. The right set of plots shows the number of unique flights that fell into each bin. The top shows the number of flights and the bottom the percentage of flights in each bin, again with respect to the total number of unique flight numbers in the bins defined by the user. Note that if a flight expereinced a NIC value in more than one bin over time it will be included in both on the top, but it will not be double counted when calculating the percentage (i.e. the percentage value in the bottom graph is not necessarily the height of each bin on the top divided by the total height of the full graph). Also, note that the markup popups display data for the bin highlighted by the user's mouse. 
+**Table 3:** The left set of plots organizes every single sample collected into the prescribed bins. The top left shows all samples organized into the bins, and the bottom left shows the percentage of each group with respect to the total contained in all the bins. The right set of plots shows the number of unique flights that fell into each bin. The top shows the number of flights and the bottom the percentage of flights in each bin, again with respect to the total number of unique flight numbers in the bins defined by the user. Note that if a flight expereinced a NIC value in more than one bin over time it will be included in both on the top, but it will not be double counted when calculating the percentage (i.e. the percentage value in the bottom graph is not necessarily the height of each bin on the top divided by the total height of the full graph). Also, note that the popups that appear when hovering over the graphs display data for the bin highlighted by the user's mouse. 
 
 <img width="997" alt="image" src="https://github.com/user-attachments/assets/596d189b-2dd6-430f-84e0-b454124c9f23" />
 
-Table 4: 
-
-The tool also creates a map of the data. The map on the left, saved to _map_raw.html_ in the `Outputs` folder is a map of every data point. The right shows the map saved in `map_averaged.html`, which averages the samples over cells and plots a single point at the center of the cells. The size of the cells can be manually changed within `process_ADS_B_data.py` inside the *get_NIC_data_boxed_averages()* function by changing the *lat_bin_size* and *long_bin_size* that define the cell dimensions. Note the filters on the left that allow you to show or hide data within a particualar bin. Click a point to get more information about it. 
+**Table 4:** The tool also creates a map of the data - **only the first day is saved if mulptile dates for analyssi are chosen**. The map on the left, saved to _map_raw.html_ in the `Outputs` folder is a map of every data point. The right shows the map saved in `map_averaged.html`, which averages the samples over cells and plots a single point at the center of the cells. The size of the cells can be manually changed within `process_ADS_B_data.py` inside the *get_NIC_data_boxed_averages()* function by changing the *lat_bin_size* and *long_bin_size* that define the cell dimensions. Note the filters on the left that allow you to show or hide data within a particualar bin. Click a point to get more information about it. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f089d913-3a3a-425e-89d0-6ac0ec1425eb" width="50%" />
-  <img src="https://github.com/user-attachments/assets/62f9774f-364c-4971-999f-aa36e7780da1" width="50%" />
+  <img src="https://github.com/user-attachments/assets/f089d913-3a3a-425e-89d0-6ac0ec1425eb" width="49%" />
+  <img src="https://github.com/user-attachments/assets/62f9774f-364c-4971-999f-aa36e7780da1" width="49%" />
 </p>
 
-While the maps save to the output folder, one can have them automatically open by uncommenting the *webbrowser.open* lines within `porcess_ADS_B_data.py`.
+While the maps save to the output folder, one can have them automatically open by uncommenting the *webbrowser.open* lines within `process_ADS_B_data.py`.
 
 ## Next Steps
-Assumptions: 
-- will kill zeros
-- note precentages for the graphs are only of the bins given .
-- note map saving
-- note can work for any OS
-- Things that can be changed manually:
--   - note grid is preset but can be changed manually
--   - saving data frame with final data
+1. The tool currently parses the web for data, but an [rclone](https://developers.cloudflare.com/r2/examples/rclone/) can be used to interact with ADS-B exchange. Also refer to ADS-B Exchange on how to [pull data from their buckets.](https://www.adsbexchange.com/pull-data/).
+2. The data shown in the graphs is not saved. If you would like to save that data in a dataframe 9or whatever form of your choosing), you can do so by saving the $counts_stats$ (left two plots) and the $flight_stats$ (right two plots) variables at the end of the `process_ADS_B_data.py` file.
  
-To work on: 
-- r2 and getting from the website itself
-- need to re-add and clean up cusotm polygons
-
 ## Appendix
-
+- need to re-add and clean up cusotm polygons
 Creating Custom Regions:
 
 
