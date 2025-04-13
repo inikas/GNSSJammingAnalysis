@@ -38,8 +38,8 @@ Downloading the repository, you will see the following file structure:
 │   ├── package_install_check.py
 │   ├── process_ADS_B_data.py
 ├── 📁 maps
-│   ├── 📁 countries
 │   ├── 📁 custom_polygons
+│   ├──  📁 ne_10m_admin_0_countries
 │   ├── (global map files ...)
 └── 📁 outputs
 
