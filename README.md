@@ -75,14 +75,17 @@ Table 2: The left shows sample data for a single flight at 00:00:00Z on January 
 <img width="989" alt="image" src="https://github.com/user-attachments/assets/6c606936-f240-43cb-a3ba-4090a73718dc" />
 
 
-**Note**
+Note:
 - When downloading, observations from that data that have $NIC = 0$ are thrown out. 
 - If you are downloading to a folder that is stored in the cloud, say a OneDrive folder, downloading may take some time as your system tries to simultenosuly sync ot the cloud. To avoid this, you can download to a local folder or turn off syncing to the cloud until your download is complete.
 - On data size: at a sampling rate of 30 min, a typically day may store between 10 -20 MB od data.
 
 
 2. _Processing ADS-B Data_
-- go through fields
+
+This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, follow this tutorial. After custom regions are created, they are automatically shown in the dropdown. 
+
+NIC bin edges also need to be defined by the user. These edges define the buckets that the program will group observations in. You can only input integers, floats, or the string 'inf,' all seperated by commas in this field. For example, if you are interested in looking at observations below the $NIC >=7 $ threshold and above, you can enter `0, 6, 'inf'`.
 
   
 
@@ -90,7 +93,7 @@ Table 2: The left shows sample data for a single flight at 00:00:00Z on January 
 Custom Regions:
 
 ## Outputs
-- grpahs
+- graphs
 - maps saved
 
 ## Next Steps
