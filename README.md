@@ -82,7 +82,13 @@ Note:
 
 2. _Processing ADS-B Data_
 
-This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, refer to the Appendix below. After custom regions are created, they are automatically shown in the dropdown. 
+This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, refer to the Appendix below. After custom regions are created in the *custom_regions folder*, they are automatically shown in the dropdown menu in the GUI. The tool comes with three preloaded custom regions as follows: 
+
+1. East Med
+2. Black Sea
+3. Baltic
+
+![Default Custom Regions](https://github.com/user-attachments/assets/3d4e4af8-c0ce-4309-826f-9e2d48f28f5a)
 
 NIC bin edges also need to be defined by the user. These edges define the buckets that the program will group observations in. You can only input integers, floats, or the string *'inf,'* all seperated by commas in this field. For example, if you are interested in looking at observations below the $NIC >= 7$ threshold and above, that correspond to jamming and no jamming, respectively, you can enter *0, 6, 'inf'*. Once you type the bin edges in the text field, make sure to click on the _Update NIC bin edges_ button. Upon clicking this button, you will see your changes notes in the _Current Selection_ field. Note that the lower bounds are exlusive and the upper bound inclusive. You will also see a color popup appear. By default, all bins will be assigned white, but specifying colors will make it easier to differentiate quantities later on in the outputted plots. 
 
@@ -109,7 +115,6 @@ While the maps save to the output folder, one can have them automatically open b
 2. The data shown in the graphs is not saved. If you would like to save that data in a dataframe 9or whatever form of your choosing), you can do so by saving the $counts_stats$ (left two plots) and the $flight_stats$ (right two plots) variables at the end of the `process_ADS_B_data.py` file.
  
 ## Appendix
-- need to re-add and clean up cusotm polygons
-Creating Custom Regions:
 
+Follow this tutorial to add custom regions. You will need to have QGIS, a free geogrpahic information system application, downloaded - I recommend the [QGIS 3.34 Long Term Release (LTR)](https://qgis.org/download/).
 
