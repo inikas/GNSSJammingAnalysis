@@ -103,13 +103,13 @@ This tool outputs a set of graphs and maps. Table 3 describes the graph outputs,
 
 **Table 3:** The left set of plots organizes every single sample collected into the prescribed bins. The top left shows all samples organized into the bins, and the bottom left shows the percentage of each group with respect to the total contained in all the bins. The right set of plots shows the number of unique flights that fell into each bin. The top shows the number of flights and the bottom the percentage of flights in each bin, again with respect to the total number of unique flight numbers in the bins defined by the user. Note that if a flight experienced a NIC value in more than one bin over time it will be included in both the top and bottom plots, but it will not be double counted when calculating the percentage (i.e. the percentage value in the bottom graph is not necessarily the height of each bin on the top divided by the total height of the full graph). Also, note that the popups that appear when hovering over the graphs display data for the bin highlighted by the user's mouse. If you select to process multiple days, the days will appear on the same bar graph in successive order.
 
-<img width="997" alt="image" src="https://github.com/user-attachments/assets/596d189b-2dd6-430f-84e0-b454124c9f23" />
+![image](https://github.com/user-attachments/assets/7e2878a6-835b-4046-bac0-aa1b197b1c44)
 
 **Table 4:** The tool also creates a map of the data - **only the first day is saved if mulptile dates for analyssi are chosen**. The map on the left, saved to _map_raw.html_ in the `Outputs` folder is a map of every data point. The right shows the map saved in `map_averaged.html`, which averages the samples over cells and plots a single point at the center of the cells. The size of the cells can be manually changed within `process_ADS_B_data.py` inside the *get_NIC_data_boxed_averages()* function by changing the *lat_bin_size* and *long_bin_size* that define the cell dimensions. Note the filters on the left that allow you to show or hide data within a particualar bin. Click a point to get more information about it. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f089d913-3a3a-425e-89d0-6ac0ec1425eb" width="49%" />
-  <img src="https://github.com/user-attachments/assets/62f9774f-364c-4971-999f-aa36e7780da1" width="49%" />
+  <img src ="https://github.com/user-attachments/assets/d282ca16-8388-4722-a00b-6d21176780b3" width ="49%" />
+  <img src="https://github.com/user-attachments/assets/a9b4dc20-8de0-45b1-b3e3-ae7f24cf9c58" width="49%" />
 </p>
 
 While the maps save to the output folder, one can have them automatically open by uncommenting the *webbrowser.open* lines within `process_ADS_B_data.py`.
