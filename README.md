@@ -79,9 +79,10 @@ To download data, you can either select a single start date, a start and end dat
 <img width="989" alt="image" src="https://github.com/user-attachments/assets/6c606936-f240-43cb-a3ba-4090a73718dc" />
 
 Note:
+- Errors are printed out to the command line from which you ran the program.
 - When downloading, observations from that data that have $NIC = 0$ are thrown out. 
 - If you are downloading to a folder that is stored in the cloud, say a OneDrive folder, downloading may take some time as your system tries to simultenosuly sync ot the cloud. To avoid this, you can download to a local folder or turn off syncing to the cloud until your download is complete.
-- On data size: at a sampling rate of 30 min, a typically day may store between $10-20$ MB of data.
+- On data storage size: at a sampling rate of 30 min, a typically day may store between $10-20$ MB of data.
 
 
 2. _Processing ADS-B Data_
