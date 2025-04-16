@@ -1,4 +1,4 @@
-# GNSSJamming
+# GNSSJammingAnalysis
 Quantify frequency and strength of GNSS jamming affecting commercial aircraft across the globe.
 
 <!-- Hidden comment: note that the markdown anchors are just the name in all lowercase and spaces replaced with dashes -->
