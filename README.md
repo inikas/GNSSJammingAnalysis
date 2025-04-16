@@ -134,7 +134,7 @@ You can now begin drawing your custom region by moving your mouse and left-click
 
 ![image](https://github.com/user-attachments/assets/850c1b21-f237-45b7-8f6d-507d98fa9522)
 
-Enter an integer; this will be a reference to your layer that can be displayed using the *Show Labels* option in the edit layer tab (when you right-click or double-click your layer in the bottom left). Click *OK*.
+Enter an integer; this will be a reference to your layer that can be displayed using the *Show Labels* option in the edit layer tab (when you right-click or double-click your layer in the bottom left). Note that the default layers use number 1-3, so pick a number 4 or greater. Click *OK*.
 
 9. Untoggle "Toggle editing* in the layer options - it should not appear grayed out. Make sure TO SAVE.
 
