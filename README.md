@@ -66,6 +66,8 @@ To use the tool, open and run `jamming_dashboard.py`. This will open the main Gr
 ## GUI Interaction 
 Open and run the `jamming_dashboard.py` file to launch the GUI. The GUI is broken into two sections, as follows:
 
+![image](https://github.com/user-attachments/assets/af5a2477-5ab8-4a6a-95e4-a01ff5a7f4ef)
+
 1. _Downloading ADS-B Data_
 
 This section of the GUI is used to download the ADS-B data from the web. Currently, this is done by downloading data from the [ADS-B Exchange historical data](https://www.adsbexchange.com/products/historical-data/). This website publishes free, historical data for every first day of the month, found under the “readsb-hist” section. Data is oriignally stored in a JSON format. When it is downloaded, it is cleaned and stored into a [GeoDataFrame](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html). 
