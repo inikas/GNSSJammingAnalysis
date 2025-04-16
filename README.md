@@ -119,15 +119,21 @@ While the maps save to the output folder, one can have them automatically open b
 Follow this tutorial to add custom regions. You will need to have QGIS, a free geogrpahic information system application, downloaded - I recommend the [QGIS 3.34 Long Term Release (LTR)](https://qgis.org/download/).
 1. Open the `QGIS_Custom_Polygons.qgz` file in the *maps/custom_polygons* folder. You should see the three custom layers present on a map of the world
 2. Click the *New Shape File Layer...* button: ![image](https://github.com/user-attachments/assets/23bcb964-d695-47b4-801f-7a1f904349d4)
-3. In the window that appears, enter a *File Name*. This will be the name that appears in the dropdown in the GUI. Also set the *Geometry Type* to *Polygon*. Your window should look something like this: ![image](https://github.com/user-attachments/assets/9d425228-5c5a-47d8-bc0d-a9d45293d48d).
+3. In the window that appears, enter a *File Name*. This will be the name that appears in the dropdown in the GUI. Also set the *Geometry Type* to *Polygon*. Your window should look something like this: ![image](https://github.com/user-attachments/assets/9d425228-5c5a-47d8-bc0d-a9d45293d48d)
 4. Click *OK*.
-5. Your new layer will appear in the *Layers* tab in the bootm left of the screen. Right click on your layer and select *Toggle Editing*: ![image](https://github.com/user-attachments/assets/c8813a0a-6220-41a8-88f9-5c58c19b1f4c)
-6. Then click the *Add Polygon Feature* button in the toolbar: ![image](https://github.com/user-attachments/assets/b539290d-a137-4cc3-b14b-1b07c944f041). You can now begin drawing your custom region by moving your mouse and left-clicking to drop vertices on your polygon. Here is an example of what the drawing process looks like: ![image](https://github.com/user-attachments/assets/814f3e0f-c417-48ea-a0f8-86e0e0c80be6)
-7. Make sure to close your polygon at the end, and righ-click to stop drawing. When you right-click, a text window will popup asking for an *id*. ![image](https://github.com/user-attachments/assets/850c1b21-f237-45b7-8f6d-507d98fa9522)
-Enter an integer; this will be a reference to your layer that can be displayed using the *Show Labels* option in the edit layer tab (when you right-click or double-click your layer in the bottom left). Click *OK*.
-8. Untoggle "Toggle editing* in the layer options - it should not appear grayed out. Make sure TO SAVE.
+5. Your new layer will appear in the *Layers* tab in the bootm left of the screen. Right click on your layer and select *Toggle Editing*:
+![image](https://github.com/user-attachments/assets/c8813a0a-6220-41a8-88f9-5c58c19b1f4c)
+6. Then click the *Add Polygon Feature* button in the toolbar: ![image](https://github.com/user-attachments/assets/b539290d-a137-4cc3-b14b-1b07c944f041).
+You can now begin drawing your custom region by moving your mouse and left-clicking to drop vertices on your polygon. Here is an example of what the drawing process looks like: ![image](https://github.com/user-attachments/assets/814f3e0f-c417-48ea-a0f8-86e0e0c80be6)
+7. Make sure to close your polygon at the end, and righ-click to stop drawing. When you right-click, a text window will popup asking for an *id*.
 
-After saving, your shape layer will be saved and it will automatically appear in the GUI when you re-load (re-run) it.
+![image](https://github.com/user-attachments/assets/850c1b21-f237-45b7-8f6d-507d98fa9522)
+
+Enter an integer; this will be a reference to your layer that can be displayed using the *Show Labels* option in the edit layer tab (when you right-click or double-click your layer in the bottom left). Click *OK*.
+
+9. Untoggle "Toggle editing* in the layer options - it should not appear grayed out. Make sure TO SAVE.
+
+After saving, your shape layer will be saved in the *custom_polygons* folder, and it will automatically appear in the GUI when you re-load (re-run) it.
 
 
 
