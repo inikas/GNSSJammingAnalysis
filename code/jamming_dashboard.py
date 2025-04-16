@@ -14,16 +14,17 @@ from tkcalendar import Calendar
 #for dates
 from dateutil import parser
 
-#import the other scripts for processing and downloading. These are in the same directory as this script 
-import process_ADS_B_data
-import get_ADS_B_data
-
 #Change working directory to that of the script
 script_dir = os.path.dirname(os.path.abspath(__file__)) 
 os.chdir(script_dir) 
 
 #get the directory one above this one (the main folder)
 parent_dir = os.path.dirname(script_dir)
+
+#import the other scripts for processing and downloading. These are in the same directory as this script 
+import process_ADS_B_data
+import get_ADS_B_data
+
 
 #----------------------WORKER FUNCTIONS----------------
 '''
