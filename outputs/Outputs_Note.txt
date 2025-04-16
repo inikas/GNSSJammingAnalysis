@@ -1,1 +1,5 @@
-# Outptus are saved here
+# Outptus are saved in this folder.
+
+map_averaged.html -> averaged points over grid
+map_raw.html -> all samples collected 
+
