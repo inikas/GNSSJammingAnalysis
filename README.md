@@ -117,7 +117,7 @@ While the maps save to the output folder, one can have them automatically open b
 
 ## Next Steps
 1. The tool currently parses the web for data, but an [rclone](https://developers.cloudflare.com/r2/examples/rclone/) can be used to interact with ADS-B exchange. Also refer to ADS-B Exchange on how to [pull data from their buckets.](https://www.adsbexchange.com/pull-data/).
-2. The data shown in the graphs is not saved. If you would like to save that data in a dataframe 9or whatever form of your choosing), you can do so by saving the $counts_stats$ (left two plots) and the $flight_stats$ (right two plots) variables at the end of the `process_ADS_B_data.py` file.
+2. The data shown in the graphs is not saved. If you would like to save that data in a dataframe or whatever form of your choosing), you can do so by saving the $counts_stats$ (left two plots) and the $flight_stats$ (right two plots) variables at the end of the `process_ADS_B_data.py` file.
  
 ## Appendix
 
