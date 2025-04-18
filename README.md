@@ -22,15 +22,9 @@ While an intern with the [Aerospace Security Project at the Center for Strategic
 
 This tool is an attempt to solve this gap and allow a user to better understand the number and strength of jamming instances over time and over a particular area. To do this, I used publicly available Automatic Dependent Surveillance–Broadcast (ADS-B) signal data from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine if jamming is occuring. With this tool, the user can define buckets to group data by NIC value, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter measures the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not [spoofing](https://aerospace.csis.org/aerospace101/counterspace-weapons-101/) is ocurring. 
 
-Table 1 shows the different NIC values (always integers) and their associated level of confidence, expressed by the Radius of Containment ($R_c$); the actual position of the aircraft has aprobability of being within a circle of radius $R_c$ centered at the aircraft's reported position. 
+Table 1 shows the different NIC values (always integers) and their associated level of confidence, expressed by the Radius of Containment ($R_c$); the actual position of the aircraf within a circle of radius $R_c$ centered at the aircraft's reported position to a confidence of $99.999%$. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) published by the International Civil Aviation Organization (ICAO).
 
-
-
-$R_c$ parameter describes a circle with radius $R_c$ of a circle centered at the aircraft's reported position that contains the aircraft's position iwth a $99.999%$ probability
-
-in which the actual location of the aircraft has a $99.999$% of being within. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) published by the International Civil Aviation Organization (ICAO).
-
- **Table 1:** NIC value and corresponding size of containment radius. Source: Zixi Liu, Sherman Lo, and Todd Walter, "GNSS Interference Source Localization Using ADS-B data," Stanford University, [https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf](https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf).</p>
+ **Table 1:** NIC values and their corresponding containment radii. Source: Zixi Liu, Sherman Lo, and Todd Walter, "GNSS Interference Source Localization Using ADS-B data," Stanford University, [https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf](https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf).</p>
 
 <img width="261" alt="image" src="https://github.com/user-attachments/assets/de9dcf69-565b-4c07-95d1-af5e71523701" />
 
@@ -65,7 +59,7 @@ This repository is coded using Python, and works for both Mac and Windows operat
 9. folium
 10. mplcursors
 ```
-You can either run the `pip3 install [package name]` command in the terminal to individually install each package, or you can open and run the `package_install_check.py` script that will automatically check and install missing packages. 
+You can either run the `pip3 install [package name]` command in the terminal to individually install each package, or you can open and run the `package_install_check.py` script that will automatically check and install missing packages. These packages are also listed in the `requirements.txt` file in the repository.
 
 To use the tool, open and run `jamming_dashboard.py`. This will open the main Graphical User Interface (GUI).
 
