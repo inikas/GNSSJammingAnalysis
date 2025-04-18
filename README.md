@@ -68,7 +68,7 @@ Open and run the `jamming_dashboard.py` file to launch the GUI. The GUI is broke
 
 ![image](https://github.com/user-attachments/assets/af5a2477-5ab8-4a6a-95e4-a01ff5a7f4ef)
 
-1. _Downloading ADS-B Data_
+1. _Download ADS-B Data_
 
 This section of the GUI is used to download the ADS-B data from the web. Currently, this is done by downloading data from the [ADS-B Exchange historical data](https://www.adsbexchange.com/products/historical-data/). This website publishes free, historical data for every first day of the month, found under the “readsb-hist” section. Data is oriignally stored in a JSON format. When it is downloaded, it is cleaned and stored into a [GeoDataFrame](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.html). 
 
@@ -85,7 +85,7 @@ Note:
 - On data storage size: at a sampling rate of 30 min, a typically day may store between $10-20$ MB of data.
 
 
-2. _Processing ADS-B Data_
+2. _Process ADS-B Data_
 
 This section is to be used after data is downloaded. It contains date options in the same was as the download data section. The user can only process data for files that have already ben downloaded. In this section, the user is also asked to choose a region of interest to process over. One can either choose the whole world, one of the predefined regions, or a custom region. To make a custom region, refer to the Appendix below. After custom regions are created in the *custom_regions folder*, they are automatically shown in the dropdown menu in the GUI. The tool comes with three preloaded custom regions as follows: 
 
