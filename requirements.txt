@@ -1,0 +1,12 @@
+#additional requirements for the dashboard not included in the standard Python Library
+
+tkcalendar
+python-dateutil
+pandas
+geopandas
+requests
+beautifulsoup4
+numpy
+matplotlib
+folium
+mplcursors
