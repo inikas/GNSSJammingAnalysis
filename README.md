@@ -1,11 +1,11 @@
-# GNSSJammingAnalysis
+# Global GNSS Jamming Analysis
 Quantify frequency and strength of GNSS jamming affecting commercial aircraft across the globe.
 
 <!-- Hidden comment: note that the markdown anchors are just the name in all lowercase and spaces replaced with dashes -->
 ## Table of Contents
 - [Introduction to GNSS Jamming](#introduction-to-gnss-jamming)
 - [Installation](#installation)
-- [Tool Overview](#toool-overview)
+- [Tool Overview](#tool-overview)
 - [GUI Interaction](#gui-interaction)
 - [Outputs](#outputs)
 - [Next Steps](#next-steps)
@@ -13,16 +13,22 @@ Quantify frequency and strength of GNSS jamming affecting commercial aircraft ac
 
 
 ## Introduction to GNSS Jamming
-Global Navigation Satellites Systems (GNSS), which the American Global Positioning System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airbornes systems, such as aircraft. Notably, however, history was made on March 3, 2025 "when the [Lunar GNSS Receiver Experiment (LuGRE)](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/nasa-successfully-acquires-gps-signals-on-moon/#:~:text=NASA%20and%20the%20Italian%20Space,signals%20on%20the%20Moon's%20surface.) became the first technology demonstration to acquire and track Earth-based navigation signals on the Moon’s surface." GNSS signals are [used](https://www.gps.gov/applications/) by devices ranging from cell phones to shipping containers. Diruption of these capacilities to such assets could lead to significant inconvenience and economic loss. Disruption of GNSS signals to systems like commercial aircraft, however, [could aversly affect thier safety systems](https://www.csis.org/events/what-are-impacts-gps-jamming-and-spoofing-civilians), making routine flying more dangerous. 
+Global Navigation Satellite Systems (GNSS), which the American Global Positioning System (GPS) is an example of, are used by private, commercial, and military users for accurate and precise location services. The signals emitted by GNSS satellite systems are used by both terrestrial and airborne systems. Notably, however, history was made on March 3, 2025, "when the [Lunar GNSS Receiver Experiment (LuGRE)](https://www.nasa.gov/directorates/somd/space-communications-navigation-program/nasa-successfully-acquires-gps-signals-on-moon/#:~:text=NASA%20and%20the%20Italian%20Space,signals%20on%20the%20Moon's%20surface.) became the first technology demonstration to acquire and track Earth-based navigation signals on the Moon’s surface." GNSS signals are [used](https://www.gps.gov/applications/) by devices ranging from cell phones to shipping containers. Disruption of these signals could lead to significant inconvenience and economic loss. Disruption of GNSS signals to systems like commercial aircraft, however, [could aversely affect thier safety systems](https://www.csis.org/events/what-are-impacts-gps-jamming-and-spoofing-civilians), making routine flying more dangerous. 
 
-As GNSS systems are space systems, attacks that disrupt or corrupt GNSS signals can be considered counterspace capabilities. Jamming, ["an electronic attack that uses radio frequency signals to interfere with communications,"](https://aerospace.csis.org/aerospace101/counterspace-weapons-101/) is increasinlgy being used to target GNSS signals. Interactive maps like [gpsjam.org](https://gpsjam.org/) can be used to view the extent of such jamming. Aditionally, as coverage of commercial aircraft is widespread, observing jamming instances on commercial aircraft can give significant insight into GNSS jamming over an area, more generally.
+As GNSS systems are space systems, attacks that disrupt or corrupt GNSS signals can be considered counterspace attacks. Jamming, ["an electronic attack that uses radio frequency signals to interfere with communications,"](https://aerospace.csis.org/aerospace101/counterspace-weapons-101/) is increasinlgy being used to target GNSS signals. Interactive maps like [gpsjam.org](https://gpsjam.org/) can be used to view the extent of such jamming. As commercial aircraft flight paths cover large portions of the globe, jamming observed on commercial flights offers persistent insight into global GNSS jamming trends. High trafficked zones, such as in Europe, East Asia, and areas of the Middle East, are good candidate areas for observation, while areas of the globe with little aircraft traffic are not.  
 
 ## Tool Overview
-While an intern with the [Aerospace Security Project at the Center for Strategic and International Studies](https://www.csis.org/programs/aerospace-security-project) in Washington, D.C., I explored such tools but I could not find an open source tool that quantified jamming over time. 
+While an intern with the [Aerospace Security Project at the Center for Strategic and International Studies](https://www.csis.org/programs/aerospace-security-project) in Washington, D.C., I explored publicly available jamming tools online, but I could not find an open source tool that quantified the extent of jamming over time. 
 
-This project is an attempt to allow the user to more clearly grasp the number and strength of jamming instances over time and over a particular area. To do this, I used publicly avaiable Automatic Dependent Surveillance–Broadcast (ADS-B) from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine whether or not jamming is occuring. The user can define buckets to group data in, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter gives information on the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not spoofing is ocurring. 
+This tool is an attempt to solve this gap and allow a user to better understand the number and strength of jamming instances over time and over a particular area. To do this, I used publicly available Automatic Dependent Surveillance–Broadcast (ADS-B) signal data from [ADS-B Exchange](https://www.adsbexchange.com/) that includes aircraft positional and GNSS system integrity data. Specifically, the Navigation Integirty Category (NIC) is used to determine if jamming is occuring. With this tool, the user can define buckets to group data by NIC value, but generally, a $NIC >= 7$ implies normal conditions, and $NIC <=6$ likely (although not necessarily) implies jamming. Note that this parameter measures the precision of the location extracted from the GNSS signals rather than accuracy which could give insight into whether or not [spoofing](https://aerospace.csis.org/aerospace101/counterspace-weapons-101/) is ocurring. 
 
-Table 1, below, shows the different NIC values (always integers) and the associated level of confidence in the reading, expressed by the Radius of Containment ($R_c$); the $R_c$ parameter describes the radius of a circle centerd at the aircraft's reported position in which the actual location of the aircraft has a $99.999$% of being within. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) published by the International Civil Aviation Organization (ICAO).
+Table 1 shows the different NIC values (always integers) and their associated level of confidence, expressed by the Radius of Containment ($R_c$); the actual position of the aircraft has aprobability of being within a circle of radius $R_c$ centered at the aircraft's reported position. 
+
+
+
+$R_c$ parameter describes a circle with radius $R_c$ of a circle centered at the aircraft's reported position that contains the aircraft's position iwth a $99.999%$ probability
+
+in which the actual location of the aircraft has a $99.999$% of being within. For more information on ADS-B, you can refer to this [Overview of Automatic Dependent Surveillance-Broadcast (ADS-B) Out](https://www.icao.int/NACC/Documents/Meetings/2021/ADSB/P01-OverviewADSBOut-ENG.pdf) published by the International Civil Aviation Organization (ICAO).
 
  **Table 1:** NIC value and corresponding size of containment radius. Source: Zixi Liu, Sherman Lo, and Todd Walter, "GNSS Interference Source Localization Using ADS-B data," Stanford University, [https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf](https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Liu_ION_ITM_2022_ADSB.pdf).</p>
 
@@ -139,6 +145,3 @@ Enter an integer; this will be a reference to your layer that can be displayed u
 9. Untoggle "Toggle editing* in the layer options - it should not appear grayed out. Make sure TO SAVE.
 
 After saving, your shape layer will be saved in the *custom_polygons* folder, and it will automatically appear in the GUI when you re-load (re-run) it.
-
-
-
