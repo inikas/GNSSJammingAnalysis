@@ -1,0 +1,2 @@
+#files to ignore if working on git repo
+__pycache__/
