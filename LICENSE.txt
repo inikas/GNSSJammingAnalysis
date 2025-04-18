@@ -1,0 +1,5 @@
+## Citation
+
+If you use this repository in published work, please cite it.  
+Credit Ioannis Nikas and the Aerospace Security Project at the Center for Strategic and International Studies in Washington, D.C.
+April 2025. 
