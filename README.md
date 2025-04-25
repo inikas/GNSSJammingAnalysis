@@ -118,6 +118,7 @@ While the maps save to the output folder, one can have them automatically open b
 ## Next Steps
 1. The tool currently parses the web for data, but an [rclone](https://developers.cloudflare.com/r2/examples/rclone/) can be used to interact with ADS-B exchange. Refer to ADS-B Exchange on how to [pull data from their buckets.](https://www.adsbexchange.com/pull-data/).
 2. The data shown in the graphs is not saved. If you would like to save that [DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that is displayed, you can do so by saving the $counts_stats$ (left two plots) and the $flight_stats$ (right two plots) variables at the end of the `process_ADS_B_data.py` file.
+3. A more rigorous data size requirement and analysis could be done. This could include sample size requirement for a desired statistcal confidence in the data (a research method question), or a performance metric to suggest a sampling rate given a user's desired processing speed and memory. A more efficient database using SQL could also be designed to make the application quicker. 
  
 ## Appendix
 
