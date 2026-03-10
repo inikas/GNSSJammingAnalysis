@@ -1,4 +1,4 @@
-#Ioannis P. Nikas. January 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
+#Ioannis Nikas. January 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
 #Written with occasional help from Chat GPT from OpenAI
 #This script helps download, clean, and save data form ADS_B exchange
 import pandas as pd
@@ -338,4 +338,5 @@ Can uncomment the next two lines to run test. Careful, though, because if you un
 when you run the dashboard. 
 '''
 #test_download
+
 #test_show_downloaded("January 1, 2024")
