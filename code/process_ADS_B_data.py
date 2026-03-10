@@ -1,4 +1,4 @@
-#Ioannis P. Nikas. February 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
+#Ioannis Nikas. February 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
 #Written with occasional help from Chat GPT from OpenAI
 #This script processess and plots the ADS_B_Data given user inputs 
 
@@ -672,4 +672,5 @@ def main(start, end, series, world, region, custom, NIC_bin_edges, NIC_colors_he
         flight_stats = get_stats_date_range("flights", dates_to_process, specified_country=region, custom_polygon = custom)
         counts_stats = get_stats_date_range("counts", dates_to_process, specified_country=region, custom_polygon = custom)
         bar_plot_stats(counts_stats, flight_stats, region_description)
+
 
