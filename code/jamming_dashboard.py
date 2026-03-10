@@ -1,4 +1,4 @@
-#Ioannis P. Nikas. January 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
+#Ioannis Nikas. January 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
 #Written with occasional help from Chat GPT from OpenAI
 #Script to create a simple GUI for the user to interact with the GPS Jamming tool
 
@@ -476,4 +476,5 @@ tkinter.Button(process_data_frame, text = "Process Data", font = ("garamond", 14
 
 #run the widget
 root_window.mainloop()
+
 
