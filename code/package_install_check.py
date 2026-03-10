@@ -1,4 +1,4 @@
-#Ioannis P. Nikas. April 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
+#Ioannis Nikas. April 2025. For the Aerospace Security Project at CSIS in Washington, D.C.
 #Written with occasional help from Chat GPT from OpenAI
 #This script checks if you have all the packages for the jamming tool downloaded or not
 
